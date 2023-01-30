@@ -1,0 +1,74 @@
+
+/*!*XS size*!*/
+/*@media screen and (min-width: 0 ) and (max-width: 575px) {*/
+/*}*/
+/*!*Small*!*/
+/*@media screen and (min-width: 576px ) and (max-width: 768px) {*/
+/*}*/
+/*!*Medium*!*/
+/*@media screen and (min-width: 768px ) and (max-width: 992px) {*/
+/*}*/
+/*!*Large*!*/
+/*@media screen and (min-width: 992px ) and (max-width: 1200px) {*/
+/*}*/
+/*!*X-Large*!*/
+/*@media screen and (min-width: 1200px ) and (max-width: 1400px) {*/
+/*}*/
+/*!*XX-Large*!*/
+/*@media screen and (min-width: 1400px ) {*/
+/*}*/
+
+@media screen and (max-width: 768px){
+
+    /*----------------adaptive_base_1----------------*/
+    .container2{
+        row-gap: 10px;
+    }
+    .base .box_1{
+        width: 100%;
+    }
+    .base .box_2{
+        width: 100%;
+    }
+    .logo{
+        font-size: 20px;
+    }
+    .services{
+        width: 100%;
+    }
+    .settings{
+        display: none;
+    }
+    nav{
+        width: 100%;
+        height: 100px;
+    }
+    .content{
+        width: 100%;
+        height: 820px;
+    }
+    .bath_section{
+        width: 73%;
+        text-align: center;
+    }
+    .ad{
+        width: 25%;
+    }
+    .types{
+        width: 100%;
+    }
+    .related{
+        width: 100%;
+        height: 200px;
+    }
+    .store_mobile{
+        text-align: center;
+    }
+    /*----------------adaptive_base_2----------------*/
+
+}
+@media screen and (min-width: 768px ) and (max-width: 2000px){
+    .settings_mobile{
+        display: none;
+    }
+}
