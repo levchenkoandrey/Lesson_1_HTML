@@ -41,5 +41,6 @@ let msg1 = prompt("Введіть Ваше Ім'я");
 let msg2 = prompt("Введіть Ваше По-Батькові");
 let msg3 = prompt("Введіть Ваше Вік");
 let msg3n = Number(msg3);
-let result = `${msg1} ${msg2} вам ${msg3n} роки. Мої вітання!!!`;
+console.log(msg3n);
+let result = `${msg1} ${msg2} вам ${msg3} роки. Мої вітання!!!`;
 console.log(result);
