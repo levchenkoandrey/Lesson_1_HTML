@@ -158,3 +158,4 @@ for (const coursesAndDurationArrayElement of coursesAndDurationArray) {
         console.log("Супер");
     }
     };
+
