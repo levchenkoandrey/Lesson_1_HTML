@@ -104,14 +104,27 @@
 
 // - Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву.
 // Зберігаючи при цьому порядок не нульових значень.
-// let zero = arr => {
-//     let newArr = arr.filter(element => element !== 0);
-//     arr= newArr.concat(Array(arr.length - newArr.length).fill(0));
-//     console.log(arr);
+
+// let asd = (arr) => {
+//     const newArr = [];
+//     let j = 0;
+//     for (const item of arr) {
+//         if (item !== 0){
+//             newArr[j] = item;
+//             j++
+//         }
+//     }
+//     for (const item of arr) {
+//         if (item === 0) {
+//             newArr[j] = item;
+//             j++
+//         }
+//     }
+//     console.log(newArr);
 // }
-// zero([1,0,6,0,3]);
-// zero([0,1,2,3,4]);
-// zero([0,0,1,0]);
+// asd([1,0,6,0,3]);
+// asd([0,1,2,3,4]);
+// asd([0,0,1,0]);
 // Двожина масиву від 2 до 100
 // EXAMPLE:
 // [1,0,6,0,3] => [1,6,3,0,0]
