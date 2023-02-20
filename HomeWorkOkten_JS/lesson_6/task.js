@@ -46,8 +46,6 @@
 //     console.log(sortNums(nums,'descending'));
 //     console.log(sortNums(nums,'deescending'));
 
-
-// ==========================
 // - є масив
 // let coursesAndDurationArray = [
 //     {title: 'JavaScript Complex', monthDuration: 5},
@@ -65,50 +63,136 @@
 // });
 // console.log(sortCurs);
 
-// =========================
 //     описати колоду карт (від 6 до туза без джокерів)
-const suits = ['heart', 'club', 'diamond', 'spade']
-const cards = [{name: 'ace'}, {name: 'king'}, {name: 'queen'}, {name: 'jack'}, {name: 10}, {name: '9'}, {name: '8'}, {name: '7'}, {name: '6'}]
-const color = ['red','black'];
-const deck = []
-for (let item of suits) {
-    for (let card of cards) {
-        let j =1;
-        deck.push({
-            suit: item,
-            name: card.name,
-            color: (item === 'diamond' || item === 'heart' ) ? color[0] :  color[1]
-        })
-    }
-}
-console.log(deck)
+// const suits = ['heart', 'club', 'diamond', 'spade']
+// const cards = [{name: 'ace'}, {name: 'king'}, {name: 'queen'}, {name: 'jack'}, {name: '10'}, {name: '9'}, {name: '8'}, {name: '7'}, {name: '6'}]
+// const color = ['red','black'];
+// const deck = {hearts:[],clubs:[],diamonds:[],spades:[],};
+// for (let item of suits) {
+//     for (let card of cards) {
+//         if(item ==='heart'){
+//             deck.hearts.push({suit: item, name: card.name, color: color[0]})}
+//         if(item ==='club'){
+//             deck.clubs.push({suit: item, name: card.name, color: color[1]})}
+//         if(item ==='diamond'){
+//             deck.diamonds.push({suit: item, name: card.name, color: color[0]})}
+//         if(item ==='spade'){
+//             deck.spades.push({suit: item, name: card.name, color: color[1]})}
+//     }
+// }
+// console.log(deck)
 // - знайти піковий туз
 // - всі шістки
 // - всі червоні карти
 // - всі буби
 // - всі трефи від 9 та більше
-const aceOfSpades = deck.filter( value => (value.name === 'ace' && value.suit === 'spade'));
-const sixes =deck.filter( value => value.name === '6');
-const redCards =deck.filter( value => value.color === 'red');
-const diamonds =deck.filter( value => (value.color === 'red' && value.suit === 'diamond'));
-const clubs9plus =deck.filter( value => (value.name >'8' && value.suit === 'club'));
-console.log(aceOfSpades);
-console.log(sixes);
-console.log(redCards);
-console.log(diamonds);
-console.log(clubs9plus);
+// const aceOfSpades = deck.spades.filter( value => value.name === 'ace');
+// const sixes = [];
+// for (const deckValue in deck) {
+//     for (const item of deck[deckValue]) {
+//            if(item.name === '6'){
+//                  sixes.push(item);
+//            }
+//     }
+// }
+// const redCards = deck.hearts.concat(deck.diamonds);
+// const diamonds = deck.diamonds;
+// const clubs9plus = deck.spades.filter( value => (value.name !== '8' && value.name !== '7' && value.name !== '6'));
+// console.log(aceOfSpades);
+// console.log(sixes);
+// console.log(redCards);
+// console.log(diamonds);
+// console.log(clubs9plus);
 
-
-// =========================
-//
-//     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+//  - Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+//   -*************  ПЕРЕПРОШУЮ, вже  ***********-
 // {
 //     spades:[],
-//         diamonds:[],
+//     Diamonds:[],
 //     hearts:[],
 //     clubs:[]
 // }
-// =========================
-//     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+
+//  - взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+// let coursesArray = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced']
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'python core',
+//             'python advanced']
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+//     },
+//
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java']
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+//     }
+// ];
 // --написати пошук всіх об'єктів, в який в modules є sass
 // --написати пошук всіх об'єктів, в який в modules є docker
+// const arr = []
+// coursesArray.filter( value => {
+//     for (const item of value.modules) {
+//         (item === 'sass') ?  arr.push(value): (item === 'docker')? arr.push(value) :'defolt'
+//     }
+// })
+// console.log(arr);
+
+
+
