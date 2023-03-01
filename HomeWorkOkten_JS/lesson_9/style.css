@@ -1,0 +1,73 @@
+.wrap{
+    background-color: #34CD9E;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.collapse{
+    color: yellow;
+}
+.alpha{
+    font-size: 35px;
+}
+.beta{
+    font-family: "Agency FB";
+}
+.menu{
+    background-color: #34CD9E;
+    list-style: none;
+    color: #16457a;
+    font-size: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.description{
+    font-size: 30px;
+    color: #0bafea;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+img{
+    width: 200px;
+    height: 300px;
+}
+.member{
+    width: 300px;
+    border: 1px solid #ffe100;
+    margin-bottom: 50px;
+    padding: 10px;
+    text-align: center;
+    color: #346399;
+}
+.container_course{
+    border: 2px solid red;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.section{
+    border: 1px solid #2269bb;
+    margin: 10px;
+    width: 90%;
+    text-align: center;
+}
+.width_25{
+    margin-right: 0;
+    width: 29%;
+}
+.width_73{
+    width: 56%;
+}
+.module{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    display: block;
+}
