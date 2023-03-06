@@ -1,0 +1,60 @@
+form{
+    text-align: center;
+}
+.number{
+    font-size: 50px;
+    text-align: center;
+    margin: 50px;
+}
+.index{
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#userList{
+    height: 670px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.user{
+    list-style: none;
+    width: 17%;
+    border: 2px solid darkblue;
+    margin: 10px;
+    padding: 5px;
+}
+#pagination{
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+#prev, #next{
+    font-size: 25px;
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+#prev:hover, #next:hover{
+    background-color: darkcyan;
+    cursor: pointer;
+}
+table, .tableTask{
+    text-align: center;
+    margin: 0 auto;
+}
+tr, td{
+    border: 2px solid black;
+    max-width: 300px;
+    word-wrap: break-word;
+    padding: 5px;
+}
+input, button{
+    margin: 10px;
+}
+.asd{
+    width: 100%;
+    max-width: 100%;
+
+}
