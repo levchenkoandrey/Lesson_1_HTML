@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const urlPost = new URL(location.href);
+    const postData = urlPost.searchParams.get('postData');
+    const postBlock = document.createElement('div');
+    postBlock.classList.add('userBlock','detailsBlock');
+    const postDetails = JSON.parse(postData);
+    postBlock.innerHTML = `<h2>userID: ${postDetails.userId}</h2>
+                           <h2>ID: ${postDetails.id}</h2>
+                           <h1>${postDetails.title}</h1>
+                           <p>${postDetails.body}</p>`
+    document.body.appendChild(postBlock);
+    const btn_comments = document.createElement('button');
+    btn_comments.classList.add('a','posts');
+    btn_comments.innerText = 'Show comments';
+    btn_comments.setAttribute('onclick', 'elementUpdate(target)');
+    btn_comments.addEventListener('click', () => {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${postDetails.id}/comments`)
+            .then(response => response.json())
+            .then(comments => {
+                const commentsBlock = document.createElement('ul');
+                commentsBlock.classList.add('commentsBlock','flex','usersBlock' , 'postsBlock' );
+                for (const commentsItem of comments) {
+                    const comment = document.createElement('div');
+                    comment.classList.add('userBlock');
+                    comment.innerHTML = `<span>${commentsItem.body}</span>`
+                    commentsBlock.appendChild(comment);
+                    // let dis = document.getElementById('btn');
+                    // btn.addEventListener('click', function (){
+                    //     this.disabled= true;
+                    // })
+                }
+                postBlock.appendChild(commentsBlock);
+            })
+
+    })
+    postBlock.appendChild(btn_comments);
+    document.appendChild(postBlock);
+    function elementUpdate(target) {
+        const clickCount = parseInt(target.dataset.clickCount) || 0;
+        if (clickCount === 1) {
+            return false;
+        }
+        target.dataset.clickCount = clickCount + 1;
+        target.disabled = false;
+    }
+
+</script>
+</body>
+</html>

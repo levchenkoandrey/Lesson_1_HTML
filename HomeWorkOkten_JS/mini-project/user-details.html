@@ -9,49 +9,9 @@
     <title>user-details.html</title>
 </head>
 <body>
-<script>
-    const urlDetails = new URL(location.href);
-    const data = urlDetails.searchParams.get('data');
-    const detailsBlock = document.createElement('div');
-    detailsBlock.classList.add('userBlock','detailsBlock');
-    const userDetails = JSON.parse(data);
-    detailsBlock.innerHTML = ` <h1>${userDetails.id} : ${userDetails.name}</h1>
-                               <h2>userName: ${userDetails.username}</h2>
-                               <h2>email: ${userDetails.email} </h2>
-                               <h2>address: ${userDetails.address.street} ${userDetails.address.suite}, ${userDetails.address.city}, ${userDetails.address.zipcode}</h2>
-                               <h2>geolocation: ${userDetails.address.geo.lat} / ${userDetails.address.geo.lat}</h2>
-                               <h2>phone: ${userDetails.phone} </h2>
-                               <h2>website: ${userDetails.website} </h2>
-                               <h2>company: ${userDetails.company.name}</h2>
-                               <h3>catchPhrace: ${userDetails.company.catchPhrase}</h3>
-                               <h3>bs: ${userDetails.company.bs}</h3>`;
-    document.body.appendChild(detailsBlock);
-    const btn = document.createElement('a');
-    btn.classList.add('a','posts');
-    btn.innerText = 'post of current user';
-    detailsBlock.appendChild(btn);
-    const urlPosts = new URL(`https://jsonplaceholder.typicode.com/users/${userDetails.id}/posts`);
-    btn.addEventListener('click', ()=> {
-        fetch(urlPosts)
-            .then(response => response.json())
-            .then(posts => {
-                const postsBlock = document.createElement('div');
-                postsBlock.classList.add('flex','usersBlock' , 'postsBlock' );
-                for (const post of posts) {
-                    const titleOfPosts = document.createElement('div')
-                    const linkToPost = document.createElement('a')
-                    titleOfPosts.classList.add('a','userBlock','postTitle', 'position')
-                    linkToPost.classList.add('a');
-                    linkToPost.href = 'post-details.html?postData=' + JSON.stringify(post);
-                    linkToPost.setAttribute('target', '_blank');
-                    linkToPost.innerText = 'detail...'
-                    titleOfPosts.innerText = post.title;
-                    titleOfPosts.appendChild(linkToPost)
-                    postsBlock.appendChild(titleOfPosts);
-                    detailsBlock.appendChild(postsBlock);
-                }
-            })
-        })
-</script>
+    <div class="userBlock detailsBlock" id="detailsBlock">
+        <div class="flex postsBlock" id="postsBlock"></div>
+    </div>
+    <script src="user-details.js"></script>
 </body>
 </html>

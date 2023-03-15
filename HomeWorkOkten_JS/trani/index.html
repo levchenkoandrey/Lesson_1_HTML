@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const urlUsers = new URL('https://jsonplaceholder.typicode.com/users');
+    const usersBlock = document.createElement('div');
+    usersBlock.classList.add('flex','usersBlock');
+    fetch(urlUsers)
+        .then(respons => respons.json())
+        .then(users => {
+            for (const user of users) {
+                const userBlock =  document.createElement('div');
+                const a = document.createElement('a')
+                a.href = 'user-details.html?data=' + JSON.stringify(user);
+                a.setAttribute('target', '_blank');
+                a.classList.add('a')
+                userBlock.classList.add('userBlock');
+                userBlock.innerHTML = `${user.id}:  ${user.name}`
+                a.innerText = 'detail...';
+                userBlock.appendChild(a);
+                usersBlock.appendChild(userBlock);
+            }
+        })
+    document.body.appendChild(usersBlock);
+</script>
+</body>
+</html>
