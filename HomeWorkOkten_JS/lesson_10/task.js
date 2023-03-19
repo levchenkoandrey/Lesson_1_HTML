@@ -59,42 +59,42 @@
 // при завантажені сторінки з'являються перші 10 об'єктів.
 //     При натисканні next виводяться настпні 10 об'єктів
 // При натисканні prev виводяться попередні 10 об'єктів
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//     .then(response => response.json())
-//     .then(posts => {
-//         let currentPage = 1;
-//         const userPerPage = 10;
-//         const ul = document.getElementById("userList");
-//         const prevButton = document.getElementById("prev");
-//         const nextButton = document.getElementById("next");
-//         prevButton.addEventListener("click", () => {
-//             if (currentPage > 1) {
-//                 currentPage--;
-//                 displayPage(currentPage);
-//             }
-//         });
-//         nextButton.addEventListener("click", () => {
-//             if (currentPage < Math.ceil(posts.length / userPerPage)) {
-//                 currentPage++;
-//                 displayPage(currentPage);
-//             }
-//         });
-//         function displayPage(page) {
-//             const startIndex = (page - 1) * userPerPage;
-//             const endIndex = startIndex + userPerPage - 1;
-//             ul.innerHTML = "";
-//             for (let i = startIndex; i <= endIndex; i++) {
-//                 if (posts[i]) {
-//                     const li = document.createElement('li');
-//                     li.classList.add('user');
-//                     li.innerHTML += `<h2>userId : ${posts[i].userId}</h2> <h4>id : ${posts[i].id}</h4>
-//                                 <h4>${posts[i].title}</h4> <p>${posts[i].body}</p>`;
-//                     ul.appendChild(li);
-//                 }
-//             }
-//         }
-//         displayPage(currentPage);
-//     })
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(posts => {
+        let currentPage = 1;
+        const userPerPage = 5;
+        const ul = document.getElementById("userList");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        prevButton.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayPage(currentPage);
+            }
+        });
+        nextButton.addEventListener("click", () => {
+            if (currentPage < Math.ceil(posts.length / userPerPage)) {
+                currentPage++;
+                displayPage(currentPage);
+            }
+        });
+        function displayPage(page) {
+            const startIndex = (page - 1) * userPerPage;
+            const endIndex = startIndex + userPerPage - 1;
+            ul.innerHTML = "";
+            for (let i = startIndex; i <= endIndex; i++) {
+                if (posts[i]) {
+                    const li = document.createElement('li');
+                    li.classList.add('user');
+                    li.innerHTML += `<h2>userId : ${posts[i].userId}</h2> <h4>id : ${posts[i].id}</h4>
+                                <h4>${posts[i].title}</h4> <p>${posts[i].body}</p>`;
+                    ul.appendChild(li);
+                }
+            }
+        }
+        displayPage(currentPage);
+    })
 // =========================
 
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
